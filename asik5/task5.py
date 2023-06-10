@@ -1,0 +1,18 @@
+import numpy as np
+
+x = ([1, 1.05, 1.10, 1.15, 1.20, 1.25, 1.3])
+y = ([1, 1.025, 1.049, 1.072, 1.095, 1.118, 1.140])
+model = np.poly1d(np.polyfit(x, y, 3))
+q1 = model.deriv()
+print("1st d", q1)
+q2 = q1.deriv()
+print("2 d", q2)
+print("a)")
+print("1st d", q1(1.05))
+print("2nd d", q2(1.05))
+print("b)")
+print("1st d", q1(1.25))
+print("2nd d", q2(1.25))
+print("c)")
+print("1st d", q1(1.15))
+print("2nd d", q2(1.15))
